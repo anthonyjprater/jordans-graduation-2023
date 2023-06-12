@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courgette', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background: #080808;
+    line-height: 1.6;
+}
+
+a {
+    padding: 0.75rem;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+}
+
+h1 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    background: -webkit-linear-gradient(#e8e6e6, #631cb9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* margin: 0 auto; */
+    text-shadow: 6px 2px 18px #8885;
+    animation: yearMotion 3s ease 200ms infinite forwards;
+}
+
+@keyframes yearMotion {
+    from {
+        background: -webkit-linear-gradient(#e8e6e6, #631cb9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    to {
+        background: -webkit-linear-gradient(#631cb9, #e8e6e6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+h1 a:hover,
+h1 a:focus {
+    background: -webkit-linear-gradient(#48006a ,#e8e6e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.panel {
+    background-size: cover;
+    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+    box-shadow: 4px 8px 8px #20202075;
+    opacity: 0.15;
+    transition: 1s linear;
+}
+
+
+
+.panel:focus,
+.panel:hover {
+    opacity: 1;
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    text-shadow: 2px 2px 12px #000, -2px -2px 12px #000;
+    /* text-align: center; */
+    transition: 0.5s ease-in;
+    letter-spacing: 0.5px;
+}
+
+.panel.active h3:hover {
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+}
+
+@media(max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+    
+    h1 {
+        font-size: 5rem;
+    }
+    
+    /* .panel:nth-of-type(4),.panel:nth-of-type(5) {
+        display: none;
+    } */
+
+    .panel h3 {
+        font-size: 1.5rem;
+    }
+}
+
